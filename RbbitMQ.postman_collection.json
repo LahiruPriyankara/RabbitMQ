@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "be0bd5f8-bbc2-457f-8c0d-66e30cb34ab0",
+		"name": "RbbitMQ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18326681"
+	},
+	"item": [
+		{
+			"name": "AdvancedRabbitMQAPP-APIs",
+			"item": [
+				{
+					"name": "publishMessage",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/publish-message/:exchange-name/:routing-key/:message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publish-message",
+								":exchange-name",
+								":routing-key",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "exchange-name",
+									"value": "normal-exchange",
+									"description": "normal-exchange | header-exchange"
+								},
+								{
+									"key": "routing-key",
+									"value": " queue.admin-key",
+									"description": "queue.marketing-key | queue.finance-key | queue.admin-key"
+								},
+								{
+									"key": "message",
+									"value": "Test Topic",
+									"description": "Any String"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "publishMessageByHeader",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/publish-message/by-header/:exchange-name/:department/:message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publish-message",
+								"by-header",
+								":exchange-name",
+								":department",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "exchange-name",
+									"value": "header-exchange",
+									"description": "normal-exchange | header-exchange"
+								},
+								{
+									"key": "department",
+									"value": "finance ",
+									"description": "finance | admin"
+								},
+								{
+									"key": "message",
+									"value": "Header-exchange-test",
+									"description": "Any String"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BasicRabbitMQAPP-APIs",
+			"item": [
+				{
+					"name": "publishMessage",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/publish-message/:message-type/:message",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publish-message",
+								":message-type",
+								":message"
+							],
+							"variable": [
+								{
+									"key": "message-type",
+									"value": null,
+									"description": "json | string"
+								},
+								{
+									"key": "message",
+									"value": null,
+									"description": "Any String"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
